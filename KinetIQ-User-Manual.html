@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinetIQ Drive - User Manual</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: -20px -20px 40px -20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+        }
+
+        .toc h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .toc a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        h3 {
+            color: #495057;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+        }
+
+        h4 {
+            color: #6c757d;
+            font-size: 1.2em;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin: 15px 0;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .feature-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #28a745;
+        }
+
+        .feature-box h4 {
+            color: #28a745;
+            margin-top: 0;
+        }
+
+        .tip-box {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+        }
+
+        .tip-box h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .warning-box {
+            background: #f8d7da;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #dc3545;
+        }
+
+        .warning-box h4 {
+            color: #721c24;
+            margin-top: 0;
+        }
+
+        .code {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #667eea;
+            margin: 15px 0;
+        }
+
+        .score-range {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .score-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .score-excellent { border-top: 5px solid #28a745; }
+        .score-good { border-top: 5px solid #17a2b8; }
+        .score-average { border-top: 5px solid #ffc107; }
+        .score-poor { border-top: 5px solid #dc3545; }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            background: #f8f9fa;
+            margin: 40px -20px -20px -20px;
+            border-radius: 0 0 10px 10px;
+            color: #6c757d;
+        }
+
+        .footer p {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .score-range {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>KinetIQ Drive</h1>
+            <p>User Manual - Your Complete Guide to Better Driving</p>
+        </div>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#getting-started">2. Getting Started</a></li>
+                <li><a href="#main-features">3. Main Features</a></li>
+                <li><a href="#track-your-rides">4. Track Your Rides</a></li>
+                <li><a href="#view-your-history">5. View Your History</a></li>
+                <li><a href="#dashboard-overview">6. Dashboard Overview</a></li>
+                <li><a href="#statistics-analytics">7. Statistics & Analytics</a></li>
+                <li><a href="#tips-for-better-driving">8. Tips for Better Driving</a></li>
+                <li><a href="#troubleshooting">9. Troubleshooting</a></li>
+                <li><a href="#privacy-data">10. Privacy & Data</a></li>
+            </ul>
+        </div>
+
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p><strong>KinetIQ Drive</strong> is a comprehensive driving analysis app that helps you track and improve your driving habits in real-time. Using advanced motion sensors, the app analyzes your acceleration, braking, and steering patterns to provide detailed feedback and scores.</p>
+            
+            <div class="feature-box">
+                <h4>Key Benefits</h4>
+                <ul>
+                    <li><strong>Real-time feedback</strong> on your driving performance</li>
+                    <li><strong>Detailed analytics</strong> to track improvement over time</li>
+                    <li><strong>Personalized tips</strong> to enhance your driving skills</li>
+                    <li><strong>Comprehensive history</strong> of all your rides</li>
+                    <li><strong>Privacy-focused</strong> with local data storage</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="getting-started">
+            <h2>2. Getting Started</h2>
+            
+            <h3>First Launch</h3>
+            <ol>
+                <li><strong>Open the app</strong> - You'll see the main tracking screen</li>
+                <li><strong>Grant permissions</strong> - Allow motion access when prompted</li>
+                <li><strong>Start your first ride</strong> - Tap the large circular button to begin tracking</li>
+            </ol>
+
+            <h3>Navigation</h3>
+            <p>The app features four main sections accessible via the bottom navigation bar:</p>
+            <ul>
+                <li><strong>Track</strong> - Start and monitor your rides</li>
+                <li><strong>History</strong> - View past ride records</li>
+                <li><strong>Dashboard</strong> - Overview of your driving performance</li>
+                <li><strong>Stats</strong> - Detailed analytics and trends</li>
+            </ul>
+        </section>
+
+        <section id="main-features">
+            <h2>3. Main Features</h2>
+            
+            <h3>1. Track Your Rides</h3>
+            <p>The core feature of KinetIQ Drive is real-time ride tracking and analysis.</p>
+
+            <h4>Starting a Ride</h4>
+            <ol>
+                <li>Navigate to the <strong>Track</strong> tab</li>
+                <li>Tap the large circular <strong>Track</strong> button</li>
+                <li>The button will turn orange/red and show a stop icon</li>
+                <li>You'll see "Tracking Active" status below the button</li>
+            </ol>
+
+            <h4>During Your Ride</h4>
+            <div class="feature-box">
+                <h4>Live Metrics</h4>
+                <ul>
+                    <li><strong>Acceleration</strong>: Shows current g-force (0.65 g in example)</li>
+                    <li><strong>Rotation</strong>: Shows steering rate (0.39°/s in example)</li>
+                </ul>
+                <p><strong>Ride Time</strong> counter tracks your journey duration</p>
+                <p>Both metrics update continuously during your drive</p>
+            </div>
+
+            <h4>Stopping a Ride</h4>
+            <ol>
+                <li>Tap the <strong>stop</strong> button (square icon in the circle)</li>
+                <li>The app will automatically analyze your ride</li>
+                <li>You'll see the <strong>Ride Complete</strong> screen with your score</li>
+            </ol>
+
+            <h3>2. Ride Complete Screen</h3>
+            <p>After stopping a ride, you'll see a comprehensive summary:</p>
+
+            <h4>Overall Score</h4>
+            <ul>
+                <li><strong>Circular progress indicator</strong> showing your score out of 10</li>
+                <li><strong>Qualitative assessment</strong> (e.g., "Pretty smooth overall")</li>
+                <li><strong>Visual representation</strong> of your performance</li>
+            </ul>
+
+            <h4>Ride Breakdown</h4>
+            <p>Detailed metrics from your journey:</p>
+            <ul>
+                <li><strong>Duration</strong>: Total ride time</li>
+                <li><strong>Max Acceleration</strong>: Highest acceleration recorded</li>
+                <li><strong>Avg Acceleration</strong>: Average acceleration throughout the ride</li>
+                <li><strong>Max Rotation</strong>: Sharpest turn recorded</li>
+                <li><strong>Avg Rotation</strong>: Average steering input</li>
+            </ul>
+
+            <h4>Save Your Ride</h4>
+            <ul>
+                <li>Tap <strong>"Save Ride"</strong> to store the data</li>
+                <li>The ride will appear in your History tab</li>
+            </ul>
+        </section>
+
+        <section id="view-your-history">
+            <h2>4. View Your History</h2>
+            <p>The <strong>History</strong> tab shows all your saved rides in chronological order.</p>
+
+            <h3>Ride History Cards</h3>
+            <p>Each ride displays:</p>
+            <ul>
+                <li><strong>Date and time</strong> of the ride</li>
+                <li><strong>Duration</strong> with clock icon</li>
+                <li><strong>Quality rating</strong> (e.g., "Good")</li>
+                <li><strong>Score</strong> out of 10 (e.g., 7.2/10)</li>
+                <li><strong>Blue circular indicator</strong> with the score number</li>
+            </ul>
+
+            <h3>History Features</h3>
+            <ul>
+                <li><strong>Test button</strong> (top-left) for testing functionality</li>
+                <li><strong>Refresh button</strong> (top-right) to update the list</li>
+                <li><strong>Scrollable list</strong> of all your rides</li>
+                <li><strong>Chronological order</strong> with most recent rides first</li>
+            </ul>
+        </section>
+
+        <section id="dashboard-overview">
+            <h2>5. Dashboard Overview</h2>
+            <p>The <strong>Dashboard</strong> provides a comprehensive overview of your driving performance.</p>
+
+            <h3>Key Metrics Cards</h3>
+            <p>Four main performance indicators in a 2x2 grid:</p>
+
+            <h4>Recent Score</h4>
+            <ul>
+                <li><strong>Yellow star icon</strong></li>
+                <li>Shows your most recent ride score (e.g., 7.2/10)</li>
+                <li>Updates after each completed ride</li>
+            </ul>
+
+            <h4>Total Rides</h4>
+            <ul>
+                <li><strong>Blue car icon</strong></li>
+                <li>Displays total number of rides completed</li>
+                <li>Tracks your driving activity</li>
+            </ul>
+
+            <h4>Average Score</h4>
+            <ul>
+                <li><strong>Green trend icon</strong></li>
+                <li>Shows your overall average performance</li>
+                <li>Helps track long-term improvement</li>
+            </ul>
+
+            <h4>Quality Improvement</h4>
+            <ul>
+                <li><strong>Purple arrow icon</strong></li>
+                <li>Displays improvement percentage</li>
+                <li>Motivates continued progress</li>
+            </ul>
+
+            <h3>Driving Tips Section</h3>
+            <p>Personalized recommendations to improve your driving:</p>
+
+            <div class="tip-box">
+                <h4>Tip Examples</h4>
+                <ul>
+                    <li><strong>"Good driving! Focus on gentler braking."</strong></li>
+                    <li><strong>"Practice smoother steering in turns."</strong></li>
+                </ul>
+                <p>Each tip includes:</p>
+                <ul>
+                    <li><strong>Green checkmark</strong> for positive feedback</li>
+                    <li><strong>Yellow icons</strong> (thumbs-up, lightbulb) for guidance</li>
+                    <li><strong>Actionable advice</strong> for improvement</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="statistics-analytics">
+            <h2>6. Statistics & Analytics</h2>
+            <p>The <strong>Stats</strong> tab provides detailed analytics and trends.</p>
+
+            <h3>Time Period Selection</h3>
+            <p>Choose your analysis timeframe:</p>
+            <ul>
+                <li><strong>Week</strong> - Recent performance</li>
+                <li><strong>Month</strong> - Monthly trends</li>
+                <li><strong>Year</strong> - Annual overview</li>
+                <li><strong>All Time</strong> - Complete history</li>
+            </ul>
+
+            <h3>Score Trends</h3>
+            <ul>
+                <li><strong>Interactive chart</strong> showing performance over time</li>
+                <li><strong>Blue line graph</strong> with navigation slider</li>
+                <li><strong>Visual representation</strong> of your improvement journey</li>
+            </ul>
+
+            <h3>Key Performance Indicators</h3>
+            <p>Four essential metrics in card format:</p>
+
+            <h4>Average Score</h4>
+            <ul>
+                <li><strong>Green bar chart icon</strong></li>
+                <li>Overall performance average (e.g., 7.2)</li>
+                <li>Primary success metric</li>
+            </ul>
+
+            <h4>Best Score</h4>
+            <ul>
+                <li><strong>Yellow star icon</strong></li>
+                <li>Your highest recorded score</li>
+                <li>Achievement tracking</li>
+            </ul>
+
+            <h4>Total Rides</h4>
+            <ul>
+                <li><strong>Blue car icon</strong></li>
+                <li>Complete ride count</li>
+                <li>Activity measurement</li>
+            </ul>
+
+            <h4>Improvement</h4>
+            <ul>
+                <li><strong>Purple arrow icon</strong></li>
+                <li>Progress percentage (e.g., 0%)</li>
+                <li>Growth tracking</li>
+            </ul>
+        </section>
+
+        <section id="tips-for-better-driving">
+            <h2>7. Tips for Better Driving</h2>
+
+            <h3>Understanding Your Scores</h3>
+            <div class="score-range">
+                <div class="score-card score-excellent">
+                    <h4>8.0-10.0</h4>
+                    <p><strong>Excellent</strong> driving with smooth acceleration and gentle steering</p>
+                </div>
+                <div class="score-card score-good">
+                    <h4>6.0-7.9</h4>
+                    <p><strong>Good</strong> driving with minor areas for improvement</p>
+                </div>
+                <div class="score-card score-average">
+                    <h4>4.0-5.9</h4>
+                    <p><strong>Average</strong> driving with noticeable room for enhancement</p>
+                </div>
+                <div class="score-card score-poor">
+                    <h4>Below 4.0</h4>
+                    <p>Focus on <strong>smoother</strong> driving techniques</p>
+                </div>
+            </div>
+
+            <h3>Improving Your Performance</h3>
+
+            <h4>Acceleration Tips</h4>
+            <ul>
+                <li><strong>Smooth acceleration</strong>: Gradually increase speed rather than rapid acceleration</li>
+                <li><strong>Gentle braking</strong>: Apply brakes progressively, not abruptly</li>
+                <li><strong>Consistent speed</strong>: Maintain steady speeds on highways</li>
+            </ul>
+
+            <h4>Steering Tips</h4>
+            <ul>
+                <li><strong>Smooth turns</strong>: Take turns at appropriate speeds</li>
+                <li><strong>Gentle corrections</strong>: Make small steering adjustments</li>
+                <li><strong>Anticipate turns</strong>: Plan your route to avoid sharp maneuvers</li>
+            </ul>
+
+            <h4>General Tips</h4>
+            <ul>
+                <li><strong>Stay focused</strong>: Avoid distractions while driving</li>
+                <li><strong>Maintain distance</strong>: Keep safe following distances</li>
+                <li><strong>Plan ahead</strong>: Anticipate traffic conditions and road changes</li>
+            </ul>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>8. Troubleshooting</h2>
+
+            <h3>Common Issues</h3>
+
+            <h4>App Not Tracking</h4>
+            <div class="warning-box">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><strong>Check permissions</strong>: Ensure motion access is granted</li>
+                    <li><strong>Restart the app</strong>: Close and reopen KinetIQ Drive</li>
+                    <li><strong>Check device motion</strong>: Ensure your device supports motion tracking</li>
+                </ul>
+            </div>
+
+            <h4>Inaccurate Scores</h4>
+            <div class="warning-box">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><strong>Calibrate device</strong>: Place phone securely in vehicle</li>
+                    <li><strong>Check mounting</strong>: Ensure phone is stable during rides</li>
+                    <li><strong>Update app</strong>: Keep the app updated to latest version</li>
+                </ul>
+            </div>
+
+            <h4>Missing Ride Data</h4>
+            <div class="warning-box">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><strong>Check storage</strong>: Ensure sufficient device storage</li>
+                    <li><strong>Restart device</strong>: Reboot your phone if data seems missing</li>
+                    <li><strong>Contact support</strong>: Reach out if issues persist</li>
+                </ul>
+            </div>
+
+            <h3>Performance Tips</h3>
+            <ul>
+                <li><strong>Battery optimization</strong>: Close other apps while tracking</li>
+                <li><strong>Storage management</strong>: Regularly review and clean old data</li>
+                <li><strong>Network connection</strong>: Ensure stable internet for app updates</li>
+            </ul>
+        </section>
+
+        <section id="privacy-data">
+            <h2>9. Privacy & Data</h2>
+
+            <h3>Data Storage</h3>
+            <div class="feature-box">
+                <h4>Privacy-First Approach</h4>
+                <ul>
+                    <li><strong>Local storage</strong>: All ride data is stored on your device</li>
+                    <li><strong>No cloud sync</strong>: Your data remains private and secure</li>
+                    <li><strong>User control</strong>: You decide what data to keep or delete</li>
+                </ul>
+            </div>
+
+            <h3>Permissions</h3>
+            <ul>
+                <li><strong>Motion access</strong>: Required for tracking acceleration and rotation</li>
+                <li><strong>No location data</strong>: The app doesn't track your location</li>
+                <li><strong>No personal information</strong>: Only driving metrics are collected</li>
+            </ul>
+
+            <h3>Data Security</h3>
+            <ul>
+                <li><strong>Encrypted storage</strong>: All data is securely stored on your device</li>
+                <li><strong>No sharing</strong>: Your data is never shared with third parties</li>
+                <li><strong>User ownership</strong>: You have complete control over your data</li>
+            </ul>
+        </section>
+
+        <section id="support-contact">
+            <h2>10. Support & Contact</h2>
+
+            <h3>Getting Help</h3>
+            <ul>
+                <li><strong>In-app help</strong>: Check the Dashboard settings for additional options</li>
+                <li><strong>User manual</strong>: Refer to this guide for detailed instructions</li>
+                <li><strong>Community</strong>: Join user forums for tips and discussions</li>
+            </ul>
+
+            <h3>App Updates</h3>
+            <ul>
+                <li><strong>Automatic updates</strong>: Keep the app updated for best performance</li>
+                <li><strong>New features</strong>: Regular updates include new functionality</li>
+                <li><strong>Bug fixes</strong>: Updates address any reported issues</li>
+            </ul>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>KinetIQ Drive is designed to help you become a better, safer driver through detailed analysis and personalized feedback. By tracking your driving habits and providing actionable insights, the app empowers you to improve your skills over time.</p>
+
+            <div class="tip-box">
+                <h4>Remember</h4>
+                <ul>
+                    <li><strong>Start small</strong>: Begin with short trips to understand the app</li>
+                    <li><strong>Focus on improvement</strong>: Use the tips and analytics to enhance your driving</li>
+                    <li><strong>Stay consistent</strong>: Regular use provides the most valuable insights</li>
+                    <li><strong>Enjoy the journey</strong>: Driving improvement is a gradual process</li>
+                </ul>
+            </div>
+
+            <p style="text-align: center; font-size: 1.2em; font-weight: bold; color: #667eea; margin: 30px 0;">
+                Drive safely, drive smart, and let KinetIQ Drive guide your journey to better driving!
+            </p>
+        </section>
+
+        <div class="footer">
+            <p><em>This manual covers KinetIQ Drive version 2.1. For the most up-to-date information, please refer to the latest app version and release notes.</em></p>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">↑</button>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Initially hide back to top button
+        document.querySelector('.back-to-top').style.display = 'none';
+    </script>
+</body>
+</html>
