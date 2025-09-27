@@ -1,7 +1,155 @@
-<html>
-  <head><title>My Page</title></head>
-  <body>
-    <h1>Hello World</h1>
-    <p>This is my first GitHub Page!</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinetIQ</title>
+    <style>
+        /* Apple-inspired design: Clean, minimalist, using system fonts, ample spacing, subtle shadows */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            background-color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 600;
+        }
+        main {
+            max-width: 800px;
+            padding: 40px 20px;
+            text-align: left;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        a {
+            color: #007aff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        .privacy-policy {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .privacy-policy p {
+            margin-bottom: 15px;
+        }
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #fff;
+            font-size: 0.9em;
+            color: #86868b;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            main { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KinetIQ</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://example.com/kinetiq-apps" target="_blank">KinetIQ Apps</a> - Discover our innovative apps designed for productivity and intelligence.</li>
+                <!-- Add more links here if needed -->
+            </ul>
+        </section>
+        <section class="privacy-policy">
+            <h2>Privacy Policy</h2>
+            <p>This Privacy Policy describes how KinetIQ ("we," "us," or "our") collects, uses, and shares your personal information when you use our apps and services. This policy complies with Apple's App Store requirements, including transparency on data handling as per Apple's privacy nutrition labels.</p>
+            
+            <h3>1. Information We Collect</h3>
+            <p>We may collect the following types of information:</p>
+            <ul>
+                <li><strong>Personal Identifiers:</strong> Such as your name, email address, or device ID when you create an account or contact support.</li>
+                <li><strong>Usage Data:</strong> Information about how you interact with our apps, including app usage statistics, crash reports, and performance data (collected anonymously unless you opt-in).</li>
+                <li><strong>Device Information:</strong> Device model, OS version, IP address, and unique identifiers for analytics and security.</li>
+                <li><strong>Location Data:</strong> If enabled, approximate location for features like personalized content (we do not collect precise location without consent).</li>
+                <li>We do not collect sensitive data such as health, financial, or biometric information unless explicitly required for app functionality and with your consent.</li>
+            </ul>
+            
+            <h3>2. How We Use Your Information</h3>
+            <p>Your information is used to:</p>
+            <ul>
+                <li>Provide and improve our services, including app functionality and user experience.</li>
+                <li>Communicate with you, such as sending updates or responding to inquiries.</li>
+                <li>Analyze usage to enhance performance and fix bugs.</li>
+                <li>Comply with legal obligations and prevent fraud or abuse.</li>
+            </ul>
+            
+            <h3>3. Sharing Your Information</h3>
+            <p>We do not sell your personal information. We may share data with:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> Third-party vendors for analytics (e.g., Google Analytics), hosting, or payment processing, bound by strict confidentiality.</li>
+                <li><strong>Legal Requirements:</strong> If required by law, subpoena, or to protect our rights.</li>
+                <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets.</li>
+            </ul>
+            
+            <h3>4. Data Security and Retention</h3>
+            <p>We use industry-standard security measures, including encryption and access controls, to protect your data. Data is retained only as long as necessary for the purposes described or as required by law.</p>
+            
+            <h3>5. Your Rights and Choices</h3>
+            <p>You can:</p>
+            <ul>
+                <li>Access, update, or delete your data by contacting us at privacy@kinetiq.com.</li>
+                <li>Opt-out of data collection in app settings or by disabling permissions.</li>
+                <li>For California residents: Rights under CCPA/CPRA, including opt-out of sales (though we don't sell data).</li>
+                <li>For EU/UK residents: Rights under GDPR, including access, rectification, and erasure.</li>
+            </ul>
+            
+            <h3>6. Children's Privacy</h3>
+            <p>Our services are not directed to children under 13 (or 16 in some jurisdictions). We do not knowingly collect data from children without parental consent.</p>
+            
+            <h3>7. Changes to This Policy</h3>
+            <p>We may update this policy periodically. Changes will be posted here with the effective date. Continued use constitutes acceptance.</p>
+            
+            <h3>8. Contact Us</h3>
+            <p>If you have questions, contact us at privacy@kinetiq.com.</p>
+            
+            <p><em>Effective Date: September 27, 2025</em></p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 KinetIQ. All rights reserved.
+    </footer>
+</body>
 </html>
