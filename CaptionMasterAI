@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caption Master AI – User Manual</title>
+</head>
+<body>
+  <article>
+    <h1>Caption Master AI – User Manual</h1>
+    <p>Welcome to <strong>Caption Master AI</strong>, the fun, colorful iOS game that challenges you to out-caption on-device AI. This guide will walk you through everything you need to know.</p>
+
+    <h2>1. Getting Started</h2>
+    <h3>Requirements</h3>
+    <ul>
+      <li>iPhone running <strong>iOS 17 or later</strong></li>
+      <li>No internet connection required</li>
+      <li>No account or sign-in</li>
+    </ul>
+
+    <h3>Installation</h3>
+    <ol>
+      <li>Download <strong>Caption Master AI</strong> from the <a href="#">App Store</a>.</li>
+      <li>Open the app from your Home Screen.</li>
+      <li>Grant permission to access your <strong>Photo Library</strong> when prompted. (This is only so you can select photos. Images never leave your device.)</li>
+    </ol>
+
+    <h2>2. How to Play</h2>
+    <ol>
+      <li><strong>Choose a Photo</strong>
+        <ul>
+          <li>Tap “Choose Photo” to open your Photo Library.</li>
+          <li>Select any image you’d like to caption.</li>
+        </ul>
+      </li>
+      <li><strong>Write a Caption</strong>
+        <ul>
+          <li>Enter a short, creative caption (e.g. “Doggo vibes”).</li>
+          <li>Press <strong>Enter</strong> to submit instantly.</li>
+        </ul>
+      </li>
+      <li><strong>AI Comparison</strong>
+        <ul>
+          <li>The app uses Apple’s on-device <strong>Vision</strong> and <strong>Natural Language</strong> frameworks to generate its own caption.</li>
+          <li>Your caption is compared against the AI’s understanding.</li>
+        </ul>
+      </li>
+      <li><strong>Get Scored</strong>
+        <ul>
+          <li>Receive a score between <strong>0 and 10</strong>.</li>
+          <li>Scoring is <em>lenient</em>—synonyms and similar words count.</li>
+        </ul>
+      </li>
+      <li><strong>Track Progress</strong>
+        <ul>
+          <li>Open the <strong>Score Chart</strong> to see your caption scores evolve over time.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>3. Features</h2>
+    <ul>
+      <li>🎨 <strong>Vibrant Design</strong> – Colorful, animated interface</li>
+      <li>🤖 <strong>On-Device AI</strong> – 100% private; no data leaves your phone</li>
+      <li>📊 <strong>Score Charts</strong> – Visualize your progress across sessions</li>
+      <li>💡 <strong>Learning Mode</strong> – Tips to improve your caption creativity</li>
+      <li>⚡ <strong>Fast Gameplay</strong> – Just pick, caption, and score</li>
+    </ul>
+
+    <h2>4. Scoring Explained</h2>
+    <ul>
+      <li><strong>+15 points</strong> – Strong semantic match (e.g. dog vs puppy)</li>
+      <li><strong>+10 points</strong> – You captured the key subject</li>
+      <li><strong>Minimum 2 points</strong> – No harsh zeros, always encouraging</li>
+    </ul>
+
+    <h2>5. Privacy &amp; Security</h2>
+    <ul>
+      <li>✅ All AI processing happens <strong>locally</strong> on your device</li>
+      <li>✅ No photos or captions are uploaded or shared</li>
+      <li>✅ Works fully offline—no internet required</li>
+    </ul>
+
+    <h2>6. Permissions</h2>
+    <ul>
+      <li><strong>Photos Access (Read Only):</strong> Required to let you select an image</li>
+      <li><strong>Save to Photos (Optional):</strong> Only if you export results or screenshots back to your library</li>
+    </ul>
+    <p>No camera, microphone, contacts, or location permissions are requested.</p>
+
+    <h2>7. Tips for Best Results</h2>
+    <ul>
+      <li>Use <strong>clear photos</strong> with obvious subjects</li>
+      <li>Write <strong>short captions</strong> (1–6 words)</li>
+      <li>Try synonyms and creative twists—the AI rewards clever matches</li>
+      <li>Track your progress over multiple sessions</li>
+    </ul>
+
+    <h2>8. Troubleshooting</h2>
+    <ul>
+      <li><strong>Can’t select photos?</strong><br>
+      Go to <em>Settings &gt; Privacy &amp; Security &gt; Photos &gt; Caption Master AI</em> and allow access.</li>
+      <li><strong>Scores seem off?</strong><br>
+      The AI looks for <em>semantic similarity</em>, not exact word matches.</li>
+      <li><strong>Charts not updating?</strong><br>
+      Play multiple rounds—the chart shows trends over time.</li>
+    </ul>
+
+    <h2>9. Support</h2>
+    <p>Need help or have feedback?<br>
+    📧 Email: <a href="mailto:support@example.com">support@example.com</a><br>
+    🌐 Website: <a href="#">example.com/caption-master-ai</a></p>
+
+    <h2>10. Disclaimer</h2>
+    <p>Caption Master AI is a game for entertainment and creativity. Users are responsible for selecting images they have rights to use.</p>
+  </article>
+</body>
+</html>
