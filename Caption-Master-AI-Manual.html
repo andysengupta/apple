@@ -1,118 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caption Master AI – User Manual</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caption Master AI — User Manual</title>
+  <style>
+    :root {
+      --fg: #1f2937;         /* slate-800 */
+      --muted: #6b7280;      /* gray-500 */
+      --link: #2563eb;       /* blue-600 */
+      --border: #e5e7eb;     /* gray-200 */
+      --bg: #ffffff;
+      --accent: #f3f4f6;     /* gray-100 */
+      --code: #111827;       /* gray-900 */
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;
+      color: var(--fg); background: var(--bg); line-height: 1.6;
+    }
+    .container { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+    header h1 { margin: 0 0 4px; font-size: 2.2rem; line-height: 1.2; }
+    header p.subtitle { margin: 0 0 16px; color: var(--muted); }
+    .back { display:inline-block; margin: 8px 0 24px; text-decoration: none; color: var(--link); }
+    nav.toc {
+      background: var(--accent); border: 1px solid var(--border); border-radius: 10px;
+      padding: 16px 18px; margin: 24px 0 28px;
+    }
+    nav.toc h2 { font-size: 1.1rem; margin: 0 0 10px; }
+    nav.toc ul { margin: 0; padding-left: 20px; }
+    nav.toc li { margin: 6px 0; }
+    h2 { margin-top: 36px; font-size: 1.6rem; border-top: 1px solid var(--border); padding-top: 18px; }
+    h3 { margin-top: 18px; font-size: 1.15rem; }
+    p, li { font-size: 1rem; }
+    code, kbd {
+      font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      background: #f9fafb; border: 1px solid var(--border); border-radius: 6px; padding: 0 6px;
+      color: var(--code);
+    }
+    kbd { font-weight: 600; box-shadow: inset 0 -1px 0 #d1d5db; }
+    .callout {
+      background: #f0f9ff; border: 1px solid #bae6fd; color: #0c4a6e;
+      border-radius: 10px; padding: 14px 16px; margin: 16px 0;
+    }
+    .muted { color: var(--muted); }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: .95rem;
+    }
+    /* Simple mobile tweaks */
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.8rem; }
+      nav.toc { padding: 14px; }
+    }
+  </style>
 </head>
 <body>
-  <article>
-    <h1>Caption Master AI – User Manual</h1>
-    <p>Welcome to <strong>Caption Master AI</strong>, the fun, colorful iOS game that challenges you to out-caption on-device AI. This guide will walk you through everything you need to know.</p>
+  <div class="container">
+    <header>
+      <h1>Caption Master AI</h1>
+      <p class="subtitle">User Manual — Your Quick Guide to Smarter Captions</p>
+      <a class="back" href="/"><span aria-hidden="true">←</span> Back to Home Page</a>
+    </header>
 
-    <h2>1. Getting Started</h2>
-    <h3>Requirements</h3>
-    <ul>
-      <li>iPhone running <strong>iOS 17 or later</strong></li>
-      <li>No internet connection required</li>
-      <li>No account or sign-in</li>
-    </ul>
+    <nav class="toc" aria-label="Table of Contents">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#intro">1. Introduction</a></li>
+        <li><a href="#getting-started">2. Getting Started</a></li>
+        <li><a href="#how-to-play">3. How to Play</a></li>
+        <li><a href="#features">4. Main Features</a></li>
+        <li><a href="#scoring">5. Scoring Explained</a></li>
+        <li><a href="#learning-mode">6. Learning Mode</a></li>
+        <li><a href="#charts">7. Score Charts</a></li>
+        <li><a href="#tips">8. Tips for Better Captions</a></li>
+        <li><a href="#troubleshooting">9. Troubleshooting</a></li>
+        <li><a href="#privacy">10. Privacy &amp; Data</a></li>
+        <li><a href="#permissions">11. Permissions</a></li>
+        <li><a href="#faq">12. FAQ</a></li>
+        <li><a href="#support">13. Support &amp; Contact</a></li>
+      </ul>
+    </nav>
 
-    <h3>Installation</h3>
-    <ol>
-      <li>Download <strong>Caption Master AI</strong> from the <a href="#">App Store</a>.</li>
-      <li>Open the app from your Home Screen.</li>
-      <li>Grant permission to access your <strong>Photo Library</strong> when prompted. (This is only so you can select photos. Images never leave your device.)</li>
-    </ol>
+    <section id="intro">
+      <h2>1. Introduction</h2>
+      <p><strong>Caption Master AI</strong> is a fast, colorful iOS game where you try to out-caption on-device AI. Pick a photo, write a short caption, and see how closely you match the AI’s understanding.</p>
+      <div class="callout"><strong>Why it’s different:</strong> All AI runs on your device using Apple frameworks. No uploads, no accounts, no tracking.</div>
+      <ul>
+        <li>Fun, quick rounds</li>
+        <li>Lenient semantic matching (synonyms count)</li>
+        <li>Progress charts and Learning Mode</li>
+        <li>Works offline; photos never leave your phone</li>
+      </ul>
+    </section>
 
-    <h2>2. How to Play</h2>
-    <ol>
-      <li><strong>Choose a Photo</strong>
-        <ul>
-          <li>Tap “Choose Photo” to open your Photo Library.</li>
-          <li>Select any image you’d like to caption.</li>
-        </ul>
-      </li>
-      <li><strong>Write a Caption</strong>
-        <ul>
-          <li>Enter a short, creative caption (e.g. “Doggo vibes”).</li>
-          <li>Press <strong>Enter</strong> to submit instantly.</li>
-        </ul>
-      </li>
-      <li><strong>AI Comparison</strong>
-        <ul>
-          <li>The app uses Apple’s on-device <strong>Vision</strong> and <strong>Natural Language</strong> frameworks to generate its own caption.</li>
-          <li>Your caption is compared against the AI’s understanding.</li>
-        </ul>
-      </li>
-      <li><strong>Get Scored</strong>
-        <ul>
-          <li>Receive a score between <strong>0 and 10</strong>.</li>
-          <li>Scoring is <em>lenient</em>—synonyms and similar words count.</li>
-        </ul>
-      </li>
-      <li><strong>Track Progress</strong>
-        <ul>
-          <li>Open the <strong>Score Chart</strong> to see your caption scores evolve over time.</li>
-        </ul>
-      </li>
-    </ol>
+    <section id="getting-started">
+      <h2>2. Getting Started</h2>
+      <h3>Requirements</h3>
+      <ul>
+        <li>iPhone with <strong>iOS 17+</strong></li>
+        <li>No internet connection required</li>
+        <li>No sign-in or account</li>
+      </ul>
+      <h3>Install &amp; First Launch</h3>
+      <ol>
+        <li>Download <strong>Caption Master AI</strong> from the App Store.</li>
+        <li>Open the app from your Home Screen.</li>
+        <li>When prompted, allow <strong>Photo Library</strong> access so you can select images. Nothing is uploaded.</li>
+      </ol>
+    </section>
 
-    <h2>3. Features</h2>
-    <ul>
-      <li>🎨 <strong>Vibrant Design</strong> – Colorful, animated interface</li>
-      <li>🤖 <strong>On-Device AI</strong> – 100% private; no data leaves your phone</li>
-      <li>📊 <strong>Score Charts</strong> – Visualize your progress across sessions</li>
-      <li>💡 <strong>Learning Mode</strong> – Tips to improve your caption creativity</li>
-      <li>⚡ <strong>Fast Gameplay</strong> – Just pick, caption, and score</li>
-    </ul>
+    <section id="how-to-play">
+      <h2>3. How to Play</h2>
+      <ol>
+        <li><strong>Choose a Photo</strong> — Tap <em>Choose Photo</em> and select any image from your library.</li>
+        <li><strong>Write a Caption</strong> — Enter a short, creative line (e.g., “Doggo vibes”). Press <kbd>Enter</kbd> to submit.</li>
+        <li><strong>Compare with AI</strong> — On-device Vision &amp; Natural Language generate an AI caption.</li>
+        <li><strong>Get Scored</strong> — You’ll see a score from <strong>0–10</strong> based on semantic similarity.</li>
+        <li><strong>Track Progress</strong> — Check the chart to see how your scores evolve over time.</li>
+      </ol>
+    </section>
 
-    <h2>4. Scoring Explained</h2>
-    <ul>
-      <li><strong>+15 points</strong> – Strong semantic match (e.g. dog vs puppy)</li>
-      <li><strong>+10 points</strong> – You captured the key subject</li>
-      <li><strong>Minimum 2 points</strong> – No harsh zeros, always encouraging</li>
-    </ul>
+    <section id="features">
+      <h2>4. Main Features</h2>
+      <ul>
+        <li>🎨 <strong>Vibrant Design</strong> — Animated gradients and playful UI.</li>
+        <li>🤖 <strong>On-Device AI</strong> — 100% private; works offline.</li>
+        <li>📊 <strong>Score Tracking</strong> — Clean evolution charts.</li>
+        <li>💡 <strong>Learning Mode</strong> — Actionable, bite-size tips.</li>
+        <li>⚡ <strong>Fast Flow</strong> — <kbd>Enter</kbd> to submit instantly.</li>
+      </ul>
+    </section>
 
-    <h2>5. Privacy &amp; Security</h2>
-    <ul>
-      <li>✅ All AI processing happens <strong>locally</strong> on your device</li>
-      <li>✅ No photos or captions are uploaded or shared</li>
-      <li>✅ Works fully offline—no internet required</li>
-    </ul>
+    <section id="scoring">
+      <h2>5. Scoring Explained</h2>
+      <ul>
+        <li><strong>+15 points</strong> — Strong semantic matches (e.g., dog ↔ puppy ↔ doggo).</li>
+        <li><strong>+10 points</strong> — You captured the key subject.</li>
+        <li><strong>Floor at 2</strong> — No harsh zeros; it stays fun.</li>
+      </ul>
+      <p class="muted">Note: Scores reflect meaning, not exact words.</p>
+    </section>
 
-    <h2>6. Permissions</h2>
-    <ul>
-      <li><strong>Photos Access (Read Only):</strong> Required to let you select an image</li>
-      <li><strong>Save to Photos (Optional):</strong> Only if you export results or screenshots back to your library</li>
-    </ul>
-    <p>No camera, microphone, contacts, or location permissions are requested.</p>
+    <section id="learning-mode">
+      <h2>6. Learning Mode</h2>
+      <p>Turn on Learning Mode to get quick, practical tips after each round—what worked, what didn’t, and a nudge toward better phrasing next time.</p>
+    </section>
 
-    <h2>7. Tips for Best Results</h2>
-    <ul>
-      <li>Use <strong>clear photos</strong> with obvious subjects</li>
-      <li>Write <strong>short captions</strong> (1–6 words)</li>
-      <li>Try synonyms and creative twists—the AI rewards clever matches</li>
-      <li>Track your progress over multiple sessions</li>
-    </ul>
+    <section id="charts">
+      <h2>7. Score Charts</h2>
+      <p>Charts visualize your performance across sessions. Scores are saved locally. Play multiple rounds to see trends—not just one-off highs.</p>
+    </section>
 
-    <h2>8. Troubleshooting</h2>
-    <ul>
-      <li><strong>Can’t select photos?</strong><br>
-      Go to <em>Settings &gt; Privacy &amp; Security &gt; Photos &gt; Caption Master AI</em> and allow access.</li>
-      <li><strong>Scores seem off?</strong><br>
-      The AI looks for <em>semantic similarity</em>, not exact word matches.</li>
-      <li><strong>Charts not updating?</strong><br>
-      Play multiple rounds—the chart shows trends over time.</li>
-    </ul>
+    <section id="tips">
+      <h2>8. Tips for Better Captions</h2>
+      <ul>
+        <li>Prefer <strong>clear photos</strong> with obvious subjects.</li>
+        <li>Keep captions <strong>short (1–6 words)</strong>.</li>
+        <li>Use <strong>synonyms</strong> and vivid nouns; avoid filler.</li>
+        <li>Iterate—watch what boosts your score, then refine.</li>
+      </ul>
+    </section>
 
-    <h2>9. Support</h2>
-    <p>Need help or have feedback?<br>
-    📧 Email: <a href="mailto:support@example.com">support@example.com</a><br>
-    🌐 Website: <a href="#">example.com/caption-master-ai</a></p>
+    <section id="troubleshooting">
+      <h2>9. Troubleshooting</h2>
+      <h3>Can’t select photos?</h3>
+      <p>Go to <em>Settings &gt; Privacy &amp; Security &gt; Photos &gt; Caption Master AI</em> and allow access.</p>
+      <h3>Scores seem off?</h3>
+      <p>The system checks <em>semantic similarity</em>—different words with similar meaning can still score well.</p>
+      <h3>Charts not updating?</h3>
+      <p>Charts show trends over multiple rounds. Play a few and check again.</p>
+    </section>
 
-    <h2>10. Disclaimer</h2>
-    <p>Caption Master AI is a game for entertainment and creativity. Users are responsible for selecting images they have rights to use.</p>
-  </article>
+    <section id="privacy">
+      <h2>10. Privacy &amp; Data</h2>
+      <ul>
+        <li>✅ All processing happens <strong>on device</strong>.</li>
+        <li>✅ No photos or captions are uploaded.</li>
+        <li>✅ No accounts, ads, analytics, or tracking.</li>
+        <li>✅ Works offline.</li>
+      </ul>
+    </section>
+
+    <section id="permissions">
+      <h2>11. Permissions</h2>
+      <ul>
+        <li><strong>Photo Library (Read Only)</strong> — To let you pick an image.</li>
+        <li><strong>Photo Library Add (Optional)</strong> — Only if you save results back to Photos.</li>
+      </ul>
+      <p>No camera, microphone, contacts, or location requested.</p>
+    </section>
+
+    <section id="faq">
+      <h2>12. FAQ</h2>
+      <h3>Do I need internet?</h3>
+      <p>No. Everything runs locally on your device.</p>
+      <h3>Does the app store my photos?</h3>
+      <p>No. It processes the chosen image in memory and doesn’t upload it anywhere.</p>
+      <h3>What devices are supported?</h3>
+      <p>iPhone running iOS 17 or later.</p>
+    </section>
+
+    <section id="support">
+      <h2>13. Support &amp; Contact</h2>
+      <p>Questions or feedback? We’re listening.</p>
+      <ul>
+        <li>Email: <a href="mailto:support@example.com">support@example.com</a></li>
+        <li>Website: <a href="https://example.com/caption-master-ai">example.com/caption-master-ai</a></li>
+        <li>Privacy Policy: <a href="https://example.com/privacy">example.com/privacy</a></li>
+      </ul>
+      <p class="muted">© 2025 Your Company Name</p>
+    </section>
+
+    <footer>
+      <p>Made with ❤️ using SwiftUI and Apple Intelligence.</p>
+    </footer>
+  </div>
 </body>
 </html>
