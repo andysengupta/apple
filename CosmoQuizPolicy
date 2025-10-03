@@ -1,1 +1,72 @@
-CosmoQuizPolicy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cozmo Quiz – Privacy Policy</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #0b0f29;
+      color: #fff;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #ffd84d;
+      text-align: center;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    .stars {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    a {
+      color: #50c8ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars">✨🚀⭐</div>
+  <h1>Cozmo Quiz – Privacy Policy</h1>
+  <p><strong>Last Updated:</strong> October 2025</p>
+
+  <p>Welcome, young explorers and parents! At <strong>Cozmo Quiz</strong>, we care deeply about keeping kids safe while they learn and play. This Privacy Policy explains how we handle information in our game.</p>
+
+  <h2>👶 Safe for Kids</h2>
+  <p>
+    - We do not collect personal information from children.  
+    - No ads, no trackers, no in-app purchases.  
+    - The game is designed to be fun and safe for ages 4+.
+  </p>
+
+  <h2>📊 What We Collect</h2>
+  <p>
+    We do not collect names, emails, or any personal identifiers.  
+    The only data we may see are basic, anonymous analytics (e.g., crash reports, play session counts) provided automatically by Apple. These cannot identify your child.
+  </p>
+
+  <h2>🔒 How We Use Information</h2>
+  <p>
+    Any anonymous data is used only to make the game better — fixing bugs, improving performance, and adding fun features. We never sell or share data with third parties.
+  </p>
+
+  <h2>🌍 Parents & Guardians</h2>
+  <p>
+    If you believe your child has provided us with personal information by mistake, please contact us and we will delete it immediately.
+  </p>
+
+  <h2>📬 Contact Us</h2>
+  <p>
+    Have questions about this Privacy Policy? Reach out at:  
+    <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
+  </p>
+
+  <p style="text-align:center; margin-top:2rem;">Made with ❤️ for young space explorers!</p>
+</body>
+</html>
