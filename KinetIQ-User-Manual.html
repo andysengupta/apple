@@ -13,53 +13,101 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+            animation: backgroundShift 20s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-10px) translateY(-5px); }
+            50% { transform: translateX(10px) translateY(5px); }
+            75% { transform: translateX(-5px) translateY(10px); }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background: white;
-            box-shadow: 0 0 30px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
             text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin: -20px -20px 40px -20px;
-            border-radius: 10px 10px 0 0;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .header h1 {
             font-size: 3em;
             margin-bottom: 10px;
             font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header p {
             font-size: 1.2em;
-            opacity: 0.9;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .header a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .header a:hover {
+            color: #764ba2;
+            transform: translateY(-2px);
         }
 
         .toc {
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
             padding: 30px;
-            border-radius: 10px;
             margin-bottom: 40px;
-            border-left: 5px solid #667eea;
+            border-left: 5px solid;
+            border-image: var(--accent-gradient) 1;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .toc h2 {
-            color: #667eea;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 20px;
             font-size: 1.5em;
         }
@@ -88,11 +136,25 @@
         }
 
         h2 {
-            color: #667eea;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 2em;
             margin: 40px 0 20px 0;
             padding-bottom: 10px;
-            border-bottom: 2px solid #e9ecef;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
         }
 
         h3 {
@@ -191,11 +253,14 @@
 
         .footer {
             text-align: center;
-            padding: 40px 0;
-            background: #f8f9fa;
-            margin: 40px -20px -20px -20px;
-            border-radius: 0 0 10px 10px;
-            color: #6c757d;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+            color: var(--text-muted);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .footer p {
@@ -252,7 +317,7 @@
         <div class="header">
             <h1>KinetIQ Drive</h1>
             <p>User Manual - Your Complete Guide to Better Driving</p>
-            <p><a href="https://andysengupta.github.io/apple/index.html">Back to Home Page</a></p>
+            <p><a href="index.html">Back to Home Page</a></p>
         </div>
 
         <div class="toc">
@@ -261,13 +326,13 @@
                 <li><a href="#introduction">1. Introduction</a></li>
                 <li><a href="#getting-started">2. Getting Started</a></li>
                 <li><a href="#main-features">3. Main Features</a></li>
-                <li><a href="#track-your-rides">4. Track Your Rides</a></li>
-                <li><a href="#view-your-history">5. View Your History</a></li>
-                <li><a href="#dashboard-overview">6. Dashboard Overview</a></li>
-                <li><a href="#statistics-analytics">7. Statistics & Analytics</a></li>
-                <li><a href="#tips-for-better-driving">8. Tips for Better Driving</a></li>
-                <li><a href="#troubleshooting">9. Troubleshooting</a></li>
-                <li><a href="#privacy-data">10. Privacy & Data</a></li>
+                <li><a href="#view-your-history">4. View Your History</a></li>
+                <li><a href="#dashboard-overview">5. Dashboard Overview</a></li>
+                <li><a href="#statistics-analytics">6. Statistics & Analytics</a></li>
+                <li><a href="#tips-for-better-driving">7. Tips for Better Driving</a></li>
+                <li><a href="#troubleshooting">8. Troubleshooting</a></li>
+                <li><a href="#privacy-data">9. Privacy & Data</a></li>
+                <li><a href="#support-contact">10. Support & Contact</a></li>
             </ul>
         </div>
 

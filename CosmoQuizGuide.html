@@ -6,67 +6,340 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmo Quiz User Manual</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #4B0082, #8A2BE2, #9370DB); /* Purple magical gradient */
-            color: #FFFFFF;
+        /* Modern Gradient Design System */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            --light-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            --cosmo-gradient: linear-gradient(135deg, #4B0082 0%, #8A2BE2 50%, #9370DB 100%);
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --text-muted: #7f8c8d;
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --shadow-strong: 0 20px 40px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-small: 8px;
+        }
+
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--cosmo-gradient);
+            color: var(--text-light);
+            line-height: 1.7;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 105, 180, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(138, 43, 226, 0.3) 0%, transparent 50%);
+            animation: backgroundShift 20s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-10px) translateY(-5px); }
+            50% { transform: translateX(10px) translateY(5px); }
+            75% { transform: translateX(-5px) translateY(10px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
-        h1, h2, h3, h4 {
-            color: #FF69B4; /* Hot pink for headers */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        h1 {
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
             text-align: center;
-            font-size: 2.5em;
-            color: #FFD700; /* Gold for main title */
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            background: var(--cosmo-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .back {
+            display: inline-block;
+            margin: 10px 0 20px;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back:hover {
+            color: #764ba2;
+            transform: translateX(-5px);
+        }
+
         .section {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 5px solid #FF1493; /* Deep pink border */
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            border-left: 5px solid;
+            border-image: var(--accent-gradient) 1;
         }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        h2, h3, h4 {
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            margin-top: 25px;
+        }
+
+        h4 {
+            font-size: 1.3em;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
         ul, ol {
-            color: #E6E6FA; /* Lavender text */
+            list-style: none;
+            padding-left: 0;
+            color: var(--text-dark);
         }
+
+        li {
+            position: relative;
+            padding-left: 30px;
+            margin: 12px 0;
+            font-size: 1.1em;
+        }
+
+        li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+        }
+
+        .checkmark::before {
+            content: '✅';
+            color: #FFD700;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--border-radius);
             overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            margin: 20px 0;
         }
+
         th, td {
-            padding: 12px;
+            padding: 15px;
             text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-dark);
         }
+
         th {
-            background: #FF69B4; /* Pink header */
-            color: #FFFFFF;
+            background: var(--accent-gradient);
+            color: var(--text-light);
+            font-weight: 600;
         }
-        .checkmark {
-            color: #FFD700; /* Gold checkmarks */
-        }
+
         code {
-            background: rgba(0,0,0,0.3);
-            padding: 2px 5px;
-            border-radius: 5px;
-            color: #00FFFF; /* Cyan for code */
+            background: rgba(0, 0, 0, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+            color: #00FFFF;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         }
+
         .emoji {
             font-size: 1.2em;
+        }
+
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #764ba2;
+            transform: translateY(-1px);
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--secondary-gradient);
+            opacity: 0.1;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .floating-elements::before {
+            top: 20%;
+            left: 10%;
+            animation-delay: -5s;
+        }
+
+        .floating-elements::after {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>✅ User Manual Created! 📚</h1>
-    <p style="text-align: center; font-size: 1.2em; color: #FFD700;">I've created a comprehensive <strong>689-line user manual</strong> for Cosmo Quiz!</p>
-    <hr style="border: 1px solid #FF69B4;">
+    <div class="floating-elements"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Cosmo Quiz Guide</h1>
+            <p class="subtitle">Educational Space Adventure for Kids</p>
+            <a class="back" href="index.html"><span aria-hidden="true">←</span> Back to Home Page</a>
+        </header>
 
     <div class="section">
         <h2>📖 What's Inside</h2>
